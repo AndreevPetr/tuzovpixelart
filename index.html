@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ivan Tuzov</title>
+    <meta name="description" content="Découvrez l'œuvre d'Ivan Tukh.">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: red;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        .music-button {
+            background: none;
+            border: 1px solid red;
+            color: red;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Ivan Tuzov</h1>
+        <img src="1830.JPG" alt="Artwork by Ivan Tuzov">
+        <button class="music-button" onclick="toggleMusic()">🎵 Play Music</button>
+        <audio id="backgroundMusic" loop>
+            <source src="background.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </main>
+
+    <script>
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            if (music.paused) {
+                music.play().catch(error => console.error("Error playing music:", error));
+            } else {
+                music.pause();
+            }
+        }
+    </script>
+</body>
+</html>
